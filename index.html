@@ -9,13 +9,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Ударения">
-           <!-- Иконки -->
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Иконки -->
+    <link rel="icon" type="image/png" sizes="180x180" href="icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
     
-    <!-- Манифест -->
-    <link rel="manifest" href='data:application/json;charset=utf-8,{"name":"Trenazher","short_name":"Udareniya","start_url":".","display":"standalone","icons":[{"src":"icon.png","sizes":"180x180","type":"image/png"}]}'>
-   
+    <!-- Манифест теперь ссылается на внешний файл, а не на data-строку -->
+    <link rel="manifest" href="manifest.json">
+    
     <style>
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
