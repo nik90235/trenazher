@@ -10,14 +10,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Ударения">
     
-       <!-- Иконка для Apple Safari (Экран Домой) -->
-    <link rel="apple-touch-icon" href="icon-new.svg">
+           <!-- Встроенная PNG-иконка высокого разрешения для iOS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAMAAAAAzvENAAAAXVBQVExMRefu7v///////v7+/v7+7u7u7u7u7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7shL6z0AAAABdFJOUwBAgYODg4ODg4ODg4ODg4ODg4ODg4OD799vAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FBmYHCg8XInZ9FA8AAALoSURBVHja7d3bctowEIBhG8DGBgxiSExDwtwK9///bTe7Z9pOnbS7Wp6Z9X9XpIn8ZAsbYgKBe8Of9wMAvBvC0TCEo2EIR8MQjoYhHA1DOBqGcDQM4WgYwtEwhKNhCEfDEI6GIRwNQzgahnA0DOGGO796XmY9rL9DODrmYV1nPax/Qzg65vEw90z3uP4N4egYw6mGIRwNQzgahnA0DOGGO7p6R1eGof7+O4SjYw6nH8b39YfePIRwOPrx6ofT+vG4Xn+HcHTMo+eD6R7XvyEcHfPoea6PZ4/r3xCOjnEcaRjC0TCEo2EIR8MQbrijq/df7gxdGYb6++8Qjo45nH4Y39cfevMQwuHox6sfTuvH43r9HcLRMY+eD6Z7XP+GcHbMwXfGgX7Xv9/w0zN0Zej/f9+w2WkYv6MhWBiGv77bOfgO6zT/Wb9+XbXzWb/0rR279fS8+9bWbO27fS92q+u7/96VwX8Vhu9vCH9WGP5wGL6F4fc3hO+G8N0QvhvCd0P4bghHwxCOhiEcDUN4N/xpVw6fPUP4vMvh6e3p99fV3UeYw58fD8Pn0/Dpqf88O59u9sEwHA6Pj8MhF7tM+WwXD0MvE9vO92wWv0f0shV1/G6P667vO8Z9rL9fPeyf/fP90R7ufr/fH8vXg+lYvR66bBf/r671Xdf9fXU6XG/HrvO7sR99Z+wGvx987+Z99v25j8XfCj2WeizXb7mvy/Uv1v6z+L6XizofzX/KdfvFvC63X87rc/tluPzF2t9Wl+X7vly7eFmWy14efrEubS5/ubwclstfLivXv/vLgYdfLgfffbncXw48/HI5+O579v3L6O8H09mY7v6uB/O6Z86Hnrv8w8wL/uEwnM+PhX3H9X+wruO6u6uX9fO6t97Xdbmvy6O/F968Z97+fO9Lw5tWmsfWqB67p7wY6oPq7t+gPvj1DdWX30f146j+E9XH6rOonlYfRfVx3A8e9/vR38d9f1ePvT9Un/zxsT+U7w/VyT8f8mP5SjSfq1fD37fC8G+B8H8Z8K9pAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJgNfyYh8V0nE+g5AAAAAElFTkSuQmCC" />
     
-    <!-- Иконка для обычных браузеров -->
-    <link rel="icon" type="image/svg+xml" href="icon-new.svg">
-
-    <!-- Упрощенный манифест без лишней кодировки -->
-    <link rel="manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%22Trenazher%22%2C%22short_name%22%3A%22Udareniya%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22icon-new.svg%22%2C%22sizes%22%3A%22180x180%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
+    <!-- Ссылка на ту же встроенную иконку для манифеста -->
+    <link rel="manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%22Trenazher%22%2C%22short_name%22%3A%22Udareniya%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAMAAAAAzvENAAAAXVBQVExMRefu7v///////v7+/v7+7u7u7u7u7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7v7+7shL6z0AAAABdFJOUwBAgYODg4ODg4ODg4ODg4ODg4ODg4OD799vAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FBmYHCg8XInZ9FA8AAALoSURBVHja7d3bctowEIBhG8DGBgxiSExDwtwK9///bTe7Z9pOnbS7Wp6Z9X9XpIn8ZAsbYgKBe8Of9wMAvBvC0TCEo2EIR8MQjoYhHA1DOBqGcDQM4WgYwtEwhKNhCEfDEI6GIRwNQzgahnA0DOGGO796XmY9rL9DODrmYV1nPax/Qzg65vEw90z3uP4N4egYw6mGIRwNQzgahnA0DOGGO7y6p6R1eGof7+O4SjYw6nH8b39YfePIRwOPrx6ofT+vG4Xn+HcHTMo+eD6R7XvyEcHfPoea6PZ4/r3xCOjnEcaRjC0TCEo2EIR8MQbrijq/df7gxdGYb6++8Qjo45nH4Y39cfevMQwuHox6sfTuvH43r9HcLRMY+eD6Z7XP+GcHbMwXfGgX7Xv9/w0zN0Zej/f9+w2WkYv6MhWBiGv77bOfgO6zT/Wb9+XbXzWb/0rR279fS8+9bWbO27fS92q+u7/96VwX8Vhu9vCH9WGP5wGL6F4fc3hO+G8N0QvhvCd0P4bghHwxCOhiEcDUN4N/xpVw6fPUP4vMvh6e3p99fV3UeYw58fD8Pn0/Dpqf8~22%2C%22sizes%22%3A%22180x180%22%2C%22type%22%3A%22image%2Fpng%22%7D%5D%7D">
     <style>
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
