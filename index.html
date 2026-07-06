@@ -9,10 +9,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Ударения">
-    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3406/3406828.png">
+    
+    <!-- Новая иконка: Красная буква А с ударением на чистом белом фоне -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' fill='white'/><text x='90' y='135' font-family='Arial, sans-serif' font-size='110' font-weight='bold' fill='%23e53e3e' text-anchor='middle'>А</text><path d='M73 40 L103 22' stroke='black' stroke-width='10' stroke-linecap='round'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' fill='white'/><text x='90' y='135' font-family='Arial, sans-serif' font-size='110' font-weight='bold' fill='%23e53e3e' text-anchor='middle'>А</text><path d='M73 40 L103 22' stroke='black' stroke-width='10' stroke-linecap='round'/></svg>">
 
-    <!-- Создаем манифест прямо «на лету» без отдельного файла -->
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlRyZW5hemhlciIsCiAgInNob3J0X25hbWUiOiAiVWRhcmVuaXlhIiwKICAic3RhcnRfdXJsIjogIi4iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmMGY0ZjgiLAogICJ0aGVtZV9jb2xvciI6ICIjMmM1MjgyIgp9">
+    <!-- Создаем манифест прямо «на лету» с новой иконкой -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlRyZW5hemhlciIsCiAgInNob3J0X25hbWUiOiAiVWRhcmVuaXlhIiwKICAic3RhcnRfdXJsIjogIi4iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmMGY0ZjgiLAogICJ0aGVtZV9jb2xvciI6ICIjMmM1MjgyIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO3V0ZjgsaHR0cHM6Ly9jZG4taWNvbnMtcG5nLmZsYXRpY29uLmNvbS81MTIvMzQwNi8zNDA2ODI4LnBuZyIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiAgICB9CiAgXQp9">
 
     <style>
         body {
@@ -83,7 +86,6 @@
 </div>
 
 <script>
-    // Регистрация инлайн Service Worker для работы офлайн
     if ('serviceWorker' in navigator) {
         const swCode = `
             self.addEventListener('install', e => self.skipWaiting());
@@ -127,9 +129,9 @@
         {"word": "цепочка", "correct": "цепОчка"}, {"word": "откупорить", "correct": "откУпорить"}, {"word": "договоренность", "correct": "договорЁнность"},
         {"word": "прибыл", "correct": "прИбыл"}, {"word": "черпать", "correct": "чЕрпать"}, {"word": "эксперт", "correct": "экспЕрт"},
         {"word": "затемно", "correct": "зАтемно"}, {"word": "клала", "correct": "клАла"}, {"word": "аэропорт", "correct": "аэропОрт"},
-        {"word": "сорвала", "correct": "сорвалА"}, {"word": "прозорлива", "correct": "прозорлИва"}, {"word": "принятый", "correct": "прИнятый"},
+        {"word": "сорвала", "correct": "сорвалА"}, {"word": "prozorliva", "correct": "прозорлИва"}, {"word": "принятый", "correct": "прИнятый"},
         {"word": "документ", "correct": "докумЕнт"}, {"word": "дозировать", "correct": "дозИровать"}, {"word": "послала", "correct": "послАла"},
-        {"word": "мозаичный", "correct": "мозаИчный"}, {"word": "ненадолго", "correct": "ненадОлго"}, {"word": "создала", "correct": "создалА"},
+        {"word": "мозаичный", "correct": "мозаИчный"}, {"word": "ненадолго", "correct": "неnadОлго"}, {"word": "создала", "correct": "создалА"},
         {"word": "местность", "correct": "мЕстность"}, {"word": "отключенный", "correct": "отключЁнный"}, {"word": "согнутый", "correct": "сОгнутый"},
         {"word": "дешевизна", "correct": "дешевИзна"}, {"word": "прибыла", "correct": "прибылА"}, {"word": "занять", "correct": "занЯть"},
         {"word": "прозорливый", "correct": "прозорлИвый"}, {"word": "красивее", "correct": "красИвее"}, {"word": "водопровод", "correct": "водопровОд"},
@@ -159,7 +161,7 @@
         {"word": "бухгалтер", "correct": "бухгАлтер"}, {"word": "прирученный", "correct": "приручЁнный"}, {"word": "кровоточащий", "correct": "кровоточАщий"},
         {"word": "накренится", "correct": "накренИтся"}, {"word": "призыв", "correct": "призЫв"}, {"word": "принята", "correct": "принятА"},
         {"word": "оклеить", "correct": "оклЕить"}, {"word": "гражданство", "correct": "граждАнство"}, {"word": "статуя", "correct": "стАтуя"},
-        {"word": "газопровод", "correct": "газопровОд"}, {"word": "средство", "correct": "срЕдство"}, {"word": "донизу", "correct": "дОнизу"},
+        {"word": "газопровод", "correct": "газопровОд"}, {"word": "средство", "correct": "срЕдства"}, {"word": "донизу", "correct": "дОнизу"},
         {"word": "облилась", "correct": "облилАсь"}, {"word": "поняла", "correct": "понялА"}, {"word": "сирота", "correct": "сиротА"},
         {"word": "шофер", "correct": "шофЁр"}, {"word": "клеить", "correct": "клЕить"}, {"word": "кровоточить", "correct": "кровоточИть"},
         {"word": "позвала", "correct": "позвалА"}, {"word": "засветло", "correct": "зАсветло"}, {"word": "торты", "correct": "тОрты"},
