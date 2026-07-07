@@ -4,69 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Тренажер ударений ЕГЭ</title>
-    
-    <!-- Теги для работы как полноценное приложение (PWA) -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Ударения">
-    <!-- Иконки -->
     <link rel="icon" type="image/png" sizes="180x180" href="icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
-    
-    <!-- Манифест теперь ссылается на внешний файл, а не на data-строку -->
     <link rel="manifest" href="manifest.json">
     
     <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f0f4f8;
-            color: #1a202c;
-            margin: 0;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-        .card {
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(49, 130, 206, 0.1);
-            padding: 30px 20px;
-            width: 100%;
-            max-width: 480px;
-            text-align: center;
-            box-sizing: border-box;
-            border: 1px solid #e2e8f0;
-            position: relative;
-        }
-        @media (min-width: 480px) { .card { padding: 40px 30px; } }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background-color: #f0f4f8; color: #1a202c; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; box-sizing: border-box; -webkit-user-select: none; user-select: none; }
+        .card { background: #ffffff; border-radius: 16px; box-shadow: 0 10px 25px rgba(49, 130, 206, 0.1); padding: 30px 20px; width: 100%; max-width: 480px; text-align: center; border: 1px solid #e2e8f0; position: relative; }
         .header-contacts { font-size: 11px; color: #a0aec0; margin-bottom: 14px; font-weight: 500; letter-spacing: 0.5px; }
-        h1 { font-size: 18px; color: #2c5282; margin-top: 0; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.2px; }
+        h1 { font-size: 18px; color: #EE6023; margin-top: 0; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.2px; }
         .progress-bar { font-size: 13px; color: #718096; margin-bottom: 25px; background: #edf2f7; padding: 6px 14px; border-radius: 20px; display: inline-block; }
-        .word-display { font-size: 38px; font-weight: 700; letter-spacing: 2px; margin-bottom: 25px; min-height: 55px; }
-        @media (min-width: 360px) { .word-display { font-size: 42px; letter-spacing: 3px; } }
+        .word-display { font-size: 42px; font-weight: 700; letter-spacing: 3px; margin-bottom: 25px; min-height: 55px; }
         .letter { display: inline-block; padding: 0 1px; }
-        .vowel { cursor: pointer; color: #2b6cb0; border-bottom: 2px dashed #90cdf4; transition: all 0.2s ease; -webkit-tap-highlight-color: transparent; }
-        .vowel:hover { color: #3182ce; background-color: #ebf8ff; border-bottom-style: solid; }
+        .vowel { cursor: pointer; color: #2368EE; border-bottom: 2px dashed #90cdf4; transition: all 0.2s ease; -webkit-tap-highlight-color: transparent; }
+        .vowel:hover { color: #2368EE; background-color: #ebf8ff; border-bottom-style: solid; }
         .letter.success-pick { color: #38a169 !important; border-bottom: 3px solid #38a169; transform: scale(1.1); }
         .letter.danger-pick { color: #e53e3e !important; border-bottom: 3px solid #e53e3e; text-decoration: line-through; }
-        .status-msg { font-size: 17px; font-weight: 600; min-height: 30px; margin-bottom: 25px; line-height: 1.4; }
+        .status-msg { font-size: 17px; font-weight: 600; min-height: 30px; margin-bottom: 25px; }
         .status-msg.green { color: #38a169; }
         .status-msg.red { color: #e53e3e; }
-        .answer-hint { font-size: 24px; font-weight: 700; letter-spacing: 1px; color: #2d3748; margin-top: 8px; }
+        .answer-hint { font-size: 24px; font-weight: 700; letter-spacing: 1px; color: #2368EE; margin-top: 8px; }
         .answer-hint span { color: #38a169; border-bottom: 2px solid #38a169; }
         .nav-buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
-        @media (min-width: 380px) { .nav-buttons { flex-direction: row; justify-content: center; gap: 12px; } }
-        .action-btn { background-color: #3182ce; color: #ffffff; border: none; padding: 14px 24px; font-size: 16px; border-radius: 10px; cursor: pointer; font-weight: 600; box-shadow: 0 4px 12px rgba(49, 130, 206, 0.2); transition: all 0.2s; -webkit-tap-highlight-color: transparent; width: 100%; box-sizing: border-box; }
-        @media (min-width: 380px) { .action-btn { width: auto; } }
-        .action-btn:hover { background-color: #2b6cb0; }
-        .back-btn { background-color: #edf2f7; color: #4a5568; box-shadow: none; border: 1px solid #cbd5e0; }
-        .restart-btn { background-color: #38a169; box-shadow: 0 4px 12px rgba(56, 161, 105, 0.2); width: 100%; }
+        .action-btn { background-color: #2368EE; color: #ffffff; border: none; padding: 14px 24px; font-size: 16px; border-radius: 10px; cursor: pointer; font-weight: 600; width: 100%; }
+        .back-btn { background-color: #edf2f7; color: #4a5568; border: 1px solid #cbd5e0; }
+        .restart-btn { background-color: #38a169; width: 100%; }
     </style>
 </head>
 <body>
@@ -85,15 +49,6 @@
 </div>
 
 <script>
-    if ('serviceWorker' in navigator) {
-        const swCode = `
-            self.addEventListener('install', e => self.skipWaiting());
-            self.addEventListener('fetch', e => e.respondWith(fetch(e.request).catch(() => caches.match(e.request))));
-        `;
-        const blob = new Blob([swCode], {type: 'application/javascript'});
-        navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(() => {});
-    }
-
     const rawDataset = [
         {"word": "жилось", "correct": "жилОсь"}, {"word": "начали", "correct": "нАчали"}, {"word": "надолго", "correct": "надОлго"},
         {"word": "нарвала", "correct": "нарвалА"}, {"word": "занята", "correct": "занятА"}, {"word": "закупорить", "correct": "закУпорить"},
@@ -117,7 +72,7 @@
         {"word": "подняв", "correct": "поднЯв"}, {"word": "сироты", "correct": "сирОты"}, {"word": "одолжит", "correct": "одолжИт"},
         {"word": "щемит", "correct": "щемИт"}, {"word": "осведомится", "correct": "освЕдомится"}, {"word": "ободриться", "correct": "ободрИться"},
         {"word": "загнутый", "correct": "зАгнутый"}, {"word": "положил", "correct": "положИл"}, {"word": "закупорив", "correct": "закУпорив"},
-        {"word": "заняли", "correct": "зАняли"}, {"word": "значимый", "correct": "знАчимый"}, {"word": "нанявшийся", "correct": "нанявшИйся"},
+        {"word": "заняли", "correct": "зАняли"}, {"word": "значимый", "correct": "знАчимый"}, {"word": "нанявшийся", "correct": "нанЯвшийся"},
         {"word": "некролог", "correct": "некролОг"}, {"word": "начать", "correct": "начАть"}, {"word": "перезвонит", "correct": "перезвонИт"},
         {"word": "сливовый", "correct": "слИвовый"}, {"word": "одолжить", "correct": "одолжИть"}, {"word": "кормящий", "correct": "кормЯщий"},
         {"word": "обзвонит", "correct": "обзвонИт"}, {"word": "таможня", "correct": "тамОжня"}, {"word": "донельзя", "correct": "донЕльзя"},
@@ -128,15 +83,15 @@
         {"word": "цепочка", "correct": "цепОчка"}, {"word": "откупорить", "correct": "откУпорить"}, {"word": "договоренность", "correct": "договорЁнность"},
         {"word": "прибыл", "correct": "прИбыл"}, {"word": "черпать", "correct": "чЕрпать"}, {"word": "эксперт", "correct": "экспЕрт"},
         {"word": "затемно", "correct": "зАтемно"}, {"word": "клала", "correct": "клАла"}, {"word": "аэропорт", "correct": "аэропОрт"},
-        {"word": "сорвала", "correct": "сорвалА"}, {"word": "prozorliva", "correct": "прозорлИва"}, {"word": "принятый", "correct": "прИнятый"},
+        {"word": "сорвала", "correct": "сорвалА"}, {"word": "прозорлива", "correct": "прозорлИва"}, {"word": "принятый", "correct": "прИнятый"},
         {"word": "документ", "correct": "докумЕнт"}, {"word": "дозировать", "correct": "дозИровать"}, {"word": "послала", "correct": "послАла"},
-        {"word": "мозаичный", "correct": "мозаИчный"}, {"word": "ненадолго", "correct": "неnadОлго"}, {"word": "создала", "correct": "создалА"},
+        {"word": "мозаичный", "correct": "мозаИчный"}, {"word": "ненадолго", "correct": "ненадОлго"}, {"word": "создала", "correct": "создалА"},
         {"word": "местность", "correct": "мЕстность"}, {"word": "отключенный", "correct": "отключЁнный"}, {"word": "согнутый", "correct": "сОгнутый"},
         {"word": "дешевизна", "correct": "дешевИзна"}, {"word": "прибыла", "correct": "прибылА"}, {"word": "занять", "correct": "занЯть"},
         {"word": "прозорливый", "correct": "прозорлИвый"}, {"word": "красивее", "correct": "красИвее"}, {"word": "водопровод", "correct": "водопровОд"},
         {"word": "наливший", "correct": "налИвший"}, {"word": "дождалась", "correct": "дождалАсь"}, {"word": "облегчить", "correct": "облегчИть"},
         {"word": "соврала", "correct": "совралА"}, {"word": "наврала", "correct": "навралА"}, {"word": "верна", "correct": "вернА"},
-        {"word": "отдала", "correct": "отдалА"}, {"word": "kran", "correct": "крАн"}, {"word": "средства", "correct": "срЕдства"},
+        {"word": "отдала", "correct": "отдалА"}, {"word": "кран", "correct": "крАн"}, {"word": "средства", "correct": "срЕдства"},
         {"word": "намерение", "correct": "намЕрение"}, {"word": "торт", "correct": "тОрт"}, {"word": "добралась", "correct": "добралАсь"},
         {"word": "полила", "correct": "полилА"}, {"word": "повторит", "correct": "повторИт"}, {"word": "еретик", "correct": "еретИк"},
         {"word": "наживший", "correct": "нажИвший"}, {"word": "влилась", "correct": "влилАсь"}, {"word": "созыв", "correct": "созЫв"},
@@ -149,7 +104,7 @@
         {"word": "локтей", "correct": "локтЕй"}, {"word": "перелила", "correct": "перелилА"}, {"word": "шарф", "correct": "шАрф"},
         {"word": "довезенный", "correct": "довезЁнный"}, {"word": "поручни", "correct": "пОручни"}, {"word": "облегченный", "correct": "облегчЁнный"},
         {"word": "облегчит", "correct": "облегчИт"}, {"word": "заняла", "correct": "занялА"}, {"word": "жалюзи", "correct": "жалюзИ"},
-        {"word": "начавшись", "correct": "начАвшись"}, {"word": "ободренный", "correct": "ободрЁнный"}, {"word": "восприняла", "correct": "воспринЯла"},
+        {"word": "начавшись", "correct": "начАвшись"}, {"word": "ободренный", "correct": "ободрЁнный"}, {"word": "восприняла", "correct": "воспринялА"},
         {"word": "щелкать", "correct": "щЁлкать"}, {"word": "иксы", "correct": "Иксы"}, {"word": "сосредоточение", "correct": "сосредотОчение"},
         {"word": "оптовый", "correct": "оптОвый"}, {"word": "занятый", "correct": "зАнятый"}, {"word": "кухонный", "correct": "кУхонный"},
         {"word": "низведенный", "correct": "низведЁнный"}, {"word": "лектор", "correct": "лЕктор"}, {"word": "лекторов", "correct": "лЕкторов"},
@@ -184,6 +139,7 @@
                 const char = cleanedCorrect[i];
                 if (char === 'Ё' || (char === char.toUpperCase() && char !== char.toLowerCase())) { accentIndex = i; break; }
             }
+            if (accentIndex === -1) accentIndex = 0;
             return { word: item.word.replace(/[^а-яё]/gi, '').trim().toLowerCase(), correct: cleanedCorrect, accentIndex: accentIndex };
         });
         for (let i = dataset.length - 1; i > 0; i--) {
