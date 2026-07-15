@@ -1,0 +1,13 @@
+{
+  "name": "Словарь паронимов",
+  "short_name": "Тренажер паронимов",
+  "start_url": "/trenazher/trenazher_paronyms.html",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "icon3.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
