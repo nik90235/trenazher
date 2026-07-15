@@ -1,0 +1,13 @@
+{
+  "name": "Тренажер паронимов",
+  "short_name": "Паронимы",
+  "start_url": ".",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "icon2.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
