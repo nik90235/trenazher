@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" sizes="180x180" href="icon3.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icon3.png">
     <link rel="manifest" href="manifest3.json">
-    <style>
+     <style>
         :root {
             --page-bg: #f0f4f8; 
             --card-bg: #ffffff;
@@ -33,7 +33,7 @@
             background-color: var(--page-bg);
             color: var(--text-main);
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -43,57 +43,57 @@
 
         .app-container {
             background-color: var(--card-bg);
-            border-radius: 24px;
+            border-radius: 20px;
             box-shadow: 0 10px 30px rgba(142, 156, 174, 0.15);
             width: 100%;
-            max-width: 850px;
-            padding: 40px;
+            max-width: 800px;
+            padding: 25px 20px;
             box-sizing: border-box;
             text-align: center;
         }
 
         .brand-header {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-muted);
             font-weight: 600;
             letter-spacing: 0.5px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .main-title {
             color: var(--accent-orange);
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin: 0 0 25px 0;
+            margin: 0 0 15px 0;
         }
 
         .status-badge {
             display: inline-block;
             background-color: var(--accent-blue-bg);
             color: var(--accent-blue-text);
-            padding: 8px 24px;
+            padding: 6px 18px;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 13px;
-            margin-bottom: 30px;
+            font-size: 12px;
+            margin-bottom: 20px;
         }
 
         .tabs {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 35px;
+            gap: 5px;
+            margin-bottom: 25px;
             border-bottom: 2px solid var(--border-color);
-            padding-bottom: 15px;
+            padding-bottom: 10px;
         }
 
         .tab-btn {
             background: none;
             border: none;
-            padding: 10px 20px;
-            font-size: 14px;
+            padding: 8px 15px;
+            font-size: 11px;
             font-weight: 700;
             color: var(--text-muted);
             cursor: pointer;
@@ -112,7 +112,7 @@
         .tab-btn.active::after {
             content: '';
             position: absolute;
-            bottom: -17px;
+            bottom: -12px;
             left: 0;
             width: 100%;
             height: 3px;
@@ -130,32 +130,33 @@
 
         /* ТЕСТ */
         .definition-display {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 700;
-            line-height: 1.5;
-            margin-bottom: 30px;
+            line-height: 1.4;
+            margin-bottom: 20px;
             color: var(--text-main);
-            min-height: 60px;
+            min-height: 50px;
         }
 
         .options-list {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin-bottom: 15px;
         }
 
         .option-btn {
             background-color: var(--card-bg);
             border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 16px 20px;
-            font-size: 14px;
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 13px;
             font-weight: 700;
             color: var(--text-main);
             cursor: pointer;
             transition: all 0.2s;
             text-align: left;
+            touch-action: manipulation;
         }
 
         .option-btn:hover:not([disabled]) {
@@ -178,16 +179,16 @@
         .info-panel {
             background-color: #f8fafc;
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 25px;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
             text-align: left;
-            font-size: 15px;
-            line-height: 1.6;
+            font-size: 13px;
+            line-height: 1.5;
         }
 
         .info-panel .paronym-entry {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .info-panel .paronym-entry:last-child {
@@ -198,33 +199,35 @@
         .match-grid {
             display: grid;
             grid-template-columns: 1fr 1.3fr;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 10px;
+            margin-top: 15px;
             text-align: left;
         }
 
         .match-column {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
 
         .match-card {
             background-color: var(--card-bg);
             border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 14px 16px;
-            font-size: 14px;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 12px;
             font-weight: 600;
-            min-height: 80px;
+            min-height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             cursor: pointer;
             user-select: none;
+            -webkit-user-select: none;
             transition: all 0.2s ease;
             position: relative;
+            touch-action: manipulation;
         }
 
         .match-card:hover:not(.matched):not(.selected) {
@@ -250,14 +253,14 @@
         .match-card.matched::after {
             content: attr(data-pair-num);
             position: absolute;
-            top: 4px;
-            right: 6px;
+            top: 3px;
+            right: 4px;
             background-color: var(--success);
             color: white;
-            font-size: 9px;
+            font-size: 8px;
             font-weight: 800;
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -273,8 +276,8 @@
 
         .control-row {
             display: flex;
-            gap: 12px;
-            margin-top: 25px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
         .btn-control {
@@ -282,12 +285,13 @@
             background-color: var(--text-main);
             color: white;
             border: none;
-            border-radius: 12px;
-            padding: 15px;
-            font-size: 15px;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 13px;
             font-weight: 700;
             cursor: pointer;
             transition: opacity 0.2s;
+            touch-action: manipulation;
         }
 
         .btn-control:hover:not([disabled]) {
@@ -306,16 +310,29 @@
 
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-4px); }
-            75% { transform: translateX(4px); }
+            25% { transform: translateX(-3px); }
+            75% { transform: translateX(3px); }
         }
 
         @media(max-width: 600px) {
-            .match-grid {
-                grid-template-columns: 1fr;
+            body {
+                padding: 5px;
             }
             .app-container {
-                padding: 24px;
+                padding: 15px 10px;
+                border-radius: 16px;
+            }
+            .main-title {
+                font-size: 18px;
+            }
+            .match-grid {
+                grid-template-columns: 1fr 1.3fr; /* Всегда держим 2 колонки */
+                gap: 6px;
+            }
+            .match-card {
+                font-size: 11px;
+                padding: 6px 8px;
+                min-height: 44px;
             }
         }
     </style>
@@ -339,7 +356,7 @@
         <div class="options-list" id="test-options"></div>
 
         <div class="info-panel" id="test-feedback" style="display: none;">
-            <div style="font-weight: 800; font-size: 18px; margin-bottom: 12px;" id="feedback-title"></div>
+            <div style="font-weight: 800; font-size: 16px; margin-bottom: 10px;" id="feedback-title"></div>
             <div id="feedback-body"></div>
         </div>
 
@@ -351,7 +368,7 @@
 
     <!-- СОПОСТАВЛЕНИЕ -->
     <div id="match-tab" class="tab-content">
-        <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 15px;">
+        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
             Перед вами 2 пары похожих паронимов. Сопоставьте каждое слово с его верным лексическим значением.
         </div>
 
@@ -517,7 +534,7 @@
         ]},
         { "pair": "ИЗОБРЕТАТЕЛЬНЫЙ — ИЗОБРЕТАТЕЛЬСКИЙ", "words": [
             {"word": "Изобретательный", "definition": "Находчивый, быстрый на выдумку, творческий.", "examples": ["изобретательный ум", "изобретательный мастер"]},
-            {"word": "Изобретательский", "definition": "Относящийся к созданию новых технических устройств.", "examples": ["изобретательское право", "изобретательский талант"]}
+            {"word": "Изобретательский", "definition": "Относящийся к созданию новых технических устройств.", "examples": ["изобретательное право", "изобретательский талант"]}
         ]},
         { "pair": "ИНФОРМАЦИОННЫЙ — ИНФОРМАТИВНЫЙ", "words": [
             {"word": "Информационный", "definition": "Относящийся к передаче информации, содержащий сведения.", "examples": ["информационное бюро", "информационные технологии"]},
@@ -548,7 +565,7 @@
             {"word": "Кожистый", "definition": "Плотный, напоминающий кожу (о растениях, листьях).", "examples": ["кожистые листья", "кожистый панцирь"]}
         ]},
         { "pair": "КОМИЧЕСКИЙ — КОМИЧНЫЙ", "words": [
-            {"word": "Комический", "definition": "Относящийся к комедии как жанру литературы или театра.", "examples": ["комический персонаж", "комическая опера"]},
+            {"word": "Комический", "definition": "Относящийся к комедии как жанру литературы или театра.", "examples": ["commissioner", "комическая опера"]},
             {"word": "Комичный", "definition": "Забавный, смешной, вызывающий смех своим видом.", "examples": ["комичный вид", "комичная ситуация"]}
         ]},
         { "pair": "КОННЫЙ — КОНСКИЙ", "words": [
@@ -638,7 +655,7 @@
             {"word": "Отклик", "definition": "Ответ на зов; выражение сочувствия, реакция общественности.", "examples": ["отклик на статью", "душевный отклик"]}
         ]},
         { "pair": "ОРГАНИЧЕСКИЙ — ОРГАНИЧНЫЙ", "words": [
-            {"word": "Органический", "definition": "Связанный с живой природой, строением организмов.", "examples": ["органическая химия", "органические удобрения"]},
+            {"word": "Органический", "definition": "Связанный с живой природой, строением организмов.", "examples": ["organica", "органические удобрения"]},
             {"word": "Органичный", "definition": "Естественный, логично обусловленный самой сущностью.", "examples": ["органичное исполнение роли", "органичное слияние стилей"]}
         ]},
         { "pair": "ОТБОРНЫЙ — ОТБОРОЧНЫЙ", "words": [
@@ -759,7 +776,7 @@
         ]},
         { "pair": "ЭСТЕТИЧЕСКИЙ — ЭСТЕТИЧНЫЙ", "words": [
             {"word": "Эстетический", "definition": "Связанный с философией прекрасного, искусством.", "examples": ["эстетический вкус", "эстетическое наслаждение"]},
-            {"word": "Эстетичный", "definition": "Красивый, изящный, соответствующий законам красоты.", "examples": ["эстетичный вид", "эстетичное оформление"]}
+            {"word": "Эстетичный", "definition": "Красивый, изящный, соответствующий законам красоты.", "examples": ["эстетичный вид", "эстечное оформление"]}
         ]},
         { "pair": "ЭТИЧЕСКИЙ — ЭТИЧНЫЙ", "words": [
             {"word": "Этический", "definition": "Относящийся к этике как моральному кодексу.", "examples": ["этические нормы", "этический кодекс"]},
@@ -851,12 +868,12 @@
                 title.style.color = 'var(--error)';
             }
 
-            let feedbackHTML = `<div style="margin-bottom: 15px;">Группа: <strong>${q.pairName}</strong></div>`;
+            let feedbackHTML = `<div style="margin-bottom: 10px;">Группа: <strong>${q.pairName}</strong></div>`;
             q.allGroupWords.forEach(wordObj => {
                 feedbackHTML += `
                     <div class="paronym-entry">
                         <strong>${wordObj.word}</strong> — ${wordObj.definition}<br>
-                        <span style="color: var(--text-muted); font-size: 14px; font-style: italic;">Примеры: ${wordObj.examples.join(', ')}</span>
+                        <span style="color: var(--text-muted); font-size: 12px; font-style: italic;">Примеры: ${wordObj.examples.join(', ')}</span>
                     </div>
                 `;
             });
