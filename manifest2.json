@@ -1,7 +1,7 @@
 {
   "name": "Словарь паронимов",
   "short_name": "Паронимы",
-  "start_url": ".",
+  "start_url": "/trenazher/paronyms",
   "display": "standalone",
   "icons": [
     {
