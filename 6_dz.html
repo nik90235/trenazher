@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДОМАШНЯЯ РАБОТА: ЗАДАНИЕ 6 ЕГЭ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background-color: #FFFFFF; color: #000000; padding: 20px; line-height: 1.5; }
+        .container { max-width: 800px; margin: 0 auto; }
+        
+        .header { border-bottom: 4px solid #EE6023; padding-bottom: 15px; margin-bottom: 30px; }
+        .header-content { display: flex; justify-content: space-between; align-items: flex-start; }
+        .header-left h1 { font-size: 26px; font-weight: 900; color: #2368EE; text-transform: uppercase; margin-bottom: 4px; }
+        .header-left p { font-size: 13px; font-weight: 700; color: #929292; text-transform: uppercase; letter-spacing: 1px; }
+        .header-right { text-align: right; font-size: 13px; color: #929292; font-weight: 700; }
+
+        .student-info { background: #F4F7FE; padding: 15px; border-radius: 6px; margin-bottom: 30px; border: 1px solid #2368EE; display: flex; }
+        .student-info input { width: 100%; padding: 12px; border: 1px solid #AFAFAF; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 15px; }
+
+        .task-card { border: 1px solid #AFAFAF; border-radius: 6px; padding: 20px; margin-bottom: 25px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .task-title { background-color: #F4F7FE; border-left: 4px solid #2368EE; padding: 8px 12px; font-size: 14px; font-weight: 700; color: #EE6023; text-transform: uppercase; margin-bottom: 15px; }
+        .instruction { font-weight: 700; margin-bottom: 15px; font-size: 15px; }
+        .sentence-box { font-size: 15px; margin-bottom: 20px; line-height: 1.6; padding-left: 10px; border-left: 3px solid #EE6023; }
+        
+        .input-block { display: flex; align-items: center; gap: 10px; }
+        .input-label { font-size: 14px; font-weight: 600; }
+        .answer-input { width: 100%; max-width: 300px; padding: 8px 12px; border: 1px solid #AFAFAF; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 14px; outline: none; }
+        .answer-input:focus { border-color: #2368EE; }
+
+        .submit-btn { background-color: #EE6023; color: white; border: none; padding: 15px 30px; font-size: 16px; font-weight: 700; border-radius: 6px; cursor: pointer; text-transform: uppercase; width: 100%; margin-top: 20px; transition: background-color 0.2s; -webkit-appearance: none; -webkit-tap-highlight-color: transparent; }
+        .submit-btn:hover { background-color: #d5531e; }
+        .submit-btn:disabled { background-color: #929292; cursor: not-allowed; }
+
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; gap: 10px; }
+            .header-right { text-align: left; }
+            .input-block { flex-direction: column; align-items: flex-start; gap: 5px; }
+            .answer-input { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainContainer">
+        <div id="homeworkForm">
+            
+            <!-- Шапка -->
+            <div class="header">
+                <div class="header-content">
+                    <div class="header-left">
+                        <h1>Домашняя работа: Задание 6</h1>
+                        <p>Контроль знаний по лексическим нормам</p>
+                    </div>
+                    <div class="header-right">
+                        <span>НМ | Никита Мельников</span><br>
+                        +7 (927) 422-35-59
+                    </div>
+                </div>
+            </div>
+
+            <!-- Данные ученика -->
+            <div class="student-info">
+                <input type="text" id="studentName" placeholder="Введите ваши Имя и Фамилию">
+            </div>
+
+            <!-- Задача 1 -->
+            <div class="task-card">
+                <div class="task-title">Задача 1</div>
+                <div class="instruction">Отредактируйте предложение: исправьте лексическую ошибку, <strong>заменив неверно</strong> употреблённое слово.</div>
+                <div class="sentence-box">Министр сделал ряд решений по улучшению инфраструктуры города.</div>
+                <div class="input-block">
+                    <span class="input-label">Ваш ответ:</span>
+                    <input type="text" data-task="Задача_16" class="answer-input" placeholder="Введите ответ...">
+                </div>
+            </div>
+
+            <!-- Задача 2 -->
+            <div class="task-card">
+                <div class="task-title">Задача 2</div>
+                <div class="instruction">Отредактируйте предложение: исправьте лексическую ошибку, <strong>исключив лишнее слово</strong>.</div>
+                <div class="sentence-box">В той небольшой компании Александр Романович был ведущим лидером, и потому все подчинённые старались следовать его советам.</div>
+                <div class="input-block">
+                    <span class="input-label">Ваш ответ:</span>
+                    <input type="text" data-task="Задача_17" class="answer-input" placeholder="Введите ответ...">
+                </div>
+            </div>
+
+            <!-- Задача 3 -->
+            <div class="task-card">
+                <div class="task-title">Задача 3</div>
+                <div class="instruction">Отредактируйте предложение: исправьте лексическую ошибку, <strong>заменив неверно</strong> употреблённое слово.</div>
+                <div class="sentence-box">После длительного карантина, когда опасность заразиться вирусом прошла, люди вернулись к своему обычному ритму жизни.</div>
+                <div class="input-block">
+                    <span class="input-label">Ваш ответ:</span>
+                    <input type="text" data-task="Задача_18" class="answer-input" placeholder="Введите ответ...">
+                </div>
+            </div>
+
+            <!-- Задача 4 -->
+            <div class="task-card">
+                <div class="task-title">Задача 4</div>
+                <div class="instruction">Отредактируйте предложение: исправьте лексическую ошибку, <strong>исключив лишнее слово</strong>.</div>
+                <div class="sentence-box">В прошлом году я уехала в Канаду, чтобы получить высшее образование, но другой альтернативой было поступление в чешский университет.</div>
+                <div class="input-block">
+                    <span class="input-label">Ваш ответ:</span>
+                    <input type="text" data-task="Задача_19" class="answer-input" placeholder="Введите ответ...">
+                </div>
+            </div>
+
+            <!-- Задача 5 -->
+            <div class="task-card">
+                <div class="task-title">Задача 5</div>
+                <div class="instruction">Отредактируйте предложение: исправьте лексическую ошибку, <strong>заменив неверно</strong> употреблённое слово.</div>
+                <div class="sentence-box">На уроках литературы ученикам предлагали читать отрывки из творчества разных писателей.</div>
+                <div class="input-block">
+                    <span class="input-label">Ваш ответ:</span>
+                    <input type="text" data-task="Задача_20" class="answer-input" placeholder="Введите ответ...">
+                </div>
+            </div>
+
+            <!-- Задача 6 -->
+            <div class="task-card">
+                <div class="task-title">Задача 6</div>
+                <div class="instruction">Отредактируйте предложение: исправьте лексическую ошибку, <strong>исключив лишнее слово</strong>.</div>
+                <div class="sentence-box">Мы поедем отдыхать за границу в сентябре месяце, когда там будет гораздо меньше туристов.</div>
+                <div class="input-block">
+                    <span class="input-label">Ваш ответ:</span>
+                    <input type="text" data-task="Задача_21" class="answer-input" placeholder="Введите ответ...">
+                </div>
+            </div>
+
+            <!-- Задача 7 -->
+            <div class="task-card">
+                <div class="task-title">Задача 7</div>
+                <div class="instruction">Отредактируйте предложение: исправьте лексическую ошибку, <strong>заменив неверно</strong> употреблённое слово.</div>
+                <div class="sentence-box">Духовный лидер посоветовал мне увеличить кругозор за счёт чтения книг.</div>
+                <div class="input-block">
+                    <span class="input-label">Ваш ответ:</span>
+                    <input type="text" data-task="Задача_22" class="answer-input" placeholder="Введите ответ...">
+                </div>
+            </div>
+
+            <!-- Задача 8 -->
+            <div class="task-card">
+                <div class="task-title">Задача 8</div>
+                <div class="instruction">Отредактируйте предложение: исправьте лексическую ошибку, <strong>исключив лишнее слово</strong>.</div>
+                <div class="sentence-box">На уроке английского языка Алиса вела взаимный диалог с преподавателем.</div>
+                <div class="input-block">
+                    <span class="input-label">Ваш ответ:</span>
+                    <input type="text" data-task="Задача_23" class="answer-input" placeholder="Введите ответ...">
+                </div>
+            </div>
+
+            <!-- Задача 9 -->
+            <div class="task-card">
+                <div class="task-title">Задача 9</div>
+                <div class="instruction">Отредактируйте предложение: исправьте лексическую ошибку, <strong>исключив лишнее слово</strong>.</div>
+                <div class="sentence-box">Чем дальше путники уходили в лес, тем больше препятствий им попадалось: особенно мешали колючие тернии, цеплявшиеся за одежду.</div>
+                <div class="input-block">
+                    <span class="input-label">Ваш ответ:</span>
+                    <input type="text" data-task="Задача_24" class="answer-input" placeholder="Введите ответ...">
+                </div>
+            </div>
+
+            <!-- Задача 10 -->
+            <div class="task-card">
+                <div class="task-title">Задача 10</div>
+                <div class="instruction">Отредактируйте предложение: исправьте лексическую ошибку, <strong>исключив лишнее слово</strong>.</div>
+                <div class="sentence-box">В военное время даже некоторые аристократки работали медицинскими медсёстрами.</div>
+                <div class="input-block">
+                    <span class="input-label">Ваш ответ:</span>
+                    <input type="text" data-task="Задача_25" class="answer-input" placeholder="Введите ответ...">
+                </div>
+            </div>
+
+            <button type="button" id="submitBtn" class="submit-btn">Отправить работу на проверку</button>
+        </div>
+    </div>
+
+    <script>
+        // СЮДА ВСТАВЬТЕ ВАШУ ССЫЛКУ /exec ИЗ GOOGLE APPS SCRIPT
+        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwI_StzbTQNIG5E9BEewF7V5Gi-cELaXwt2Ud3cgnrapToNsGLOBaEmx701c1sDkxrv/exec';
+
+        function processSending() {
+            const submitBtn = document.getElementById('submitBtn');
+            if (submitBtn.disabled) return;
+
+            const nameInput = document.getElementById('studentName');
+            const studentName = nameInput.value.trim();
+
+            if (!studentName) {
+                alert('Пожалуйста, введите ваше Имя и Фамилию.');
+                nameInput.focus();
+                return;
+            }
+
+            const inputs = document.querySelectorAll('.answer-input');
+            let allFilled = true;
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    allFilled = false;
+                }
+            });
+
+            if (!allFilled) {
+                if (!confirm('Вы заполнили не все ответы. Всё равно отправить работу?')) {
+                    return;
+                }
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Отправка данных...';
+
+            const searchParams = new URLSearchParams();
+            searchParams.append('Имя Ученика', studentName);
+            
+            inputs.forEach(input => {
+                const taskName = input.getAttribute('data-task');
+                searchParams.append(taskName, input.value.trim());
+            });
+
+            fetch(WEB_APP_URL, {
+                method: 'POST',
+                body: searchParams,
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
+            .then(() => {
+                // Ошибка ИСПРАВЛЕНА: Теперь выводится «отправлены Никите»
+                document.getElementById('mainContainer').innerHTML = `
+                    <div style="text-align: center; padding: 40px 20px; background-color: #F4F7FE; border: 2px solid #2368EE; border-radius: 6px; margin-top: 20px;">
+                        <h2 style="color: #2368EE; margin-bottom: 10px; font-weight: 900; text-transform: uppercase; font-family: 'Inter', sans-serif;">Работа успешно отправлена!</h2>
+                        <p style="font-size: 16px; color: #000; font-family: 'Inter', sans-serif;">Твои ответы успешно записаны и отправлены Никите в Telegram.</p>
+                    </div>
+                `;
+            })
+            .catch(error => {
+                alert('Произошла ошибка при отправке. Попробуйте еще раз.');
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Отправить работу на проверку';
+                console.error('Ошибка:', error);
+            });
+        }
+
+        const btn = document.getElementById('submitBtn');
+        
+        // Универсальный и максимально надежный метод обработки кликов на ПК и мобильных
+        btn.addEventListener('click', function(e) {
+            processSending();
+        });
+    </script>
+</body>
+</html>
